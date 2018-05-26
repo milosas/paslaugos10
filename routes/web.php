@@ -16,16 +16,28 @@ Route::get('/', function () {
   })->name('welcome');
 
 
-Auth::routes();
+  Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
+  Route::post('login', 'Auth\LoginController@login');
+  Route::post('logout', 'Auth\LoginController@logout')->name('logout');
+
+  // Registration Routes...
+  Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
+  Route::post('register', 'Auth\RegisterController@register');
+
+  // Password Reset Routes...
+  Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
+  Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
+  Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
+  Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 Route::get('/categories', 'CategoryController@index')->name('categories.index');
 
 Route::group(['middleware'=>['admin'], 'prefix'=>'admin'],function(){
 Route::get('/', 'AdminController@admin')->middleware('admin')->name('admin');
 Route::get('/categories', 'CategoryController@adminIndex')->name('admin.categoriesList');
 });
-Route::get('/category/create', "CategoryController@create")->name('admin.category.create'); // sukurimas
-Route::post('/category/Store', "CategoryController@store")->name('admin.category.store'); // sukurimas
-Route::delete('/category/{category}','CategoryController@destroy')->name('admin.category.delete'); //istrinam
+Route::get('/category/create', "CategoryController@create")->name('admin.categoryCreate'); // sukurimas
+Route::post('/category/Store', "CategoryController@store")->name('admin.categoryStore'); // sukurimas
+Route::delete('/category/{category}','CategoryController@destroy')->name('admin.categoryDelete'); //istrinam
 
 
 

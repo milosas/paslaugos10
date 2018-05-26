@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('content')
-  <a class="btn btn-warning" href="{{route('welcome')}}">Sukurti Kategorija</a>
+  <a class="btn btn-warning" href="{{route('admin.categoryCreate')}}">Sukurti Kategorija</a>
   <table class="table">
     <tr>
         <th class="thead-dark">Id</th>
@@ -12,7 +12,7 @@
     <td>{{$category->title}}</td>
 
     {{-- <td><a class="btn btn-success" href="{{route('mainEdit', $category)}}">EDIT</a></td> --}}
-    <td><form class="" action="{{route('admin.category.delete',$category)}}" method="post">
+    <td><form class="" action="{{route('admin.categoryDelete',$category)}}" method="post">
       @csrf
       @method('DELETE')
       <button type="submit" class="btn btn-danger">Ištrinti</button>

@@ -1,10 +1,10 @@
 <nav class="navbar navbar-dark bg-dark ">
-  <a href="#"> <img  src="http://shadowfax.org/wp-content/uploads/2017/05/york-pa-human-services.jpg" alt="Home"></a>
+  <a href="{{route('welcome')}}"> <img  src="http://shadowfax.org/wp-content/uploads/2017/05/york-pa-human-services.jpg" alt="Home"></a>
 <ul class="nav ml-auto">
     <ul class="nav">
     @guest
   <li class="nav-item">
-<a class="nav-link" href="{{ route('welcome') }}">Prisijungti</a></li>
+<a class="nav-link" href="{{ route('login') }}">Prisijungti</a></li>
     <li class="nav-item"><a class="nav-link" href="{{ route('register') }}">Registruotis</a><li>
       <li class="nav-item"><a href="{{route('categories.index')}}"class="nav-link">Kategorijos</a></li>
 @endguest

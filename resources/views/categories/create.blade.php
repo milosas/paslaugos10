@@ -2,9 +2,9 @@
 @section('content')
 <h1 class="ftco-heading ftco-animate mb-3">Sukurti Kategorija</h1>
 <br>
-<form class=""  action="{{route('admin.category.store')}}" method="post">
+<a class="btn btn-danger" href="{{route('admin.categoriesList')}}">Atgal</a>
+<form class=""  action="{{route('admin.categoryStore')}}" method="post">
 @csrf
-<a href="{{route('admin.category.store')}}">Atgal</a>
 <input value="{{old('title')}}" name="title" class="form-control form-control-lg {{ $errors->has('title') ? ' is-invalid' : '' }}" type="text" placeholder="title">
   @if ($errors->has('title'))
   <span class="invalid-feedback">

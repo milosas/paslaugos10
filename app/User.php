@@ -18,7 +18,7 @@ class User extends Authenticatable
      protected $fillable = [
      'name','surname','email','date_of_birth','phone_number','city','password',
  ];
- public function users(){
+ public function services(){
    return $this->hasMany(Service::class);
  }
  const ADMIN_TYPE = 'admin';

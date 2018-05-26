@@ -7,12 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 class Service extends Model
 {
   protected $fillable = [
-  'title','description','image_url','price'
+  'title','description','price','subcategory_id','image_url',
 ];
-public function services(){
-return $this->belongsTo(Category::class);
+public function subcategory(){
+return $this->belongsTo(Subcategory::class);
 }
-public function services(){
+public function user(){
   return $this->belongsTo(User::class);
 }
 }

@@ -10,7 +10,7 @@ class Category extends Model
     'title','image_url',
 ];
 
-public function categories(){
-  return $this->hasMany(Service::class);
+public function subcategories(){
+  return $this->hasMany(Subcategory::class);
 }
 }

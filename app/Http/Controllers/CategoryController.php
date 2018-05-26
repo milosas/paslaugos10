@@ -45,7 +45,7 @@ class CategoryController extends Controller
   'image_url'=>$request->input('image_url'),
 
     ]);
-    return redirect()->route ('admin.categories.index')->with ('message','Naujai sukurta kategorija išsaugota!');
+    return redirect()->route ('admin.categoriesList')->with ('message','Naujai sukurta kategorija išsaugota!');
     }
 
     /**
