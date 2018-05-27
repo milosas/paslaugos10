@@ -18,18 +18,18 @@ class ServicesTableSeeder extends Seeder
     public function run()
     {
       $this->service->create([
-        'title'=>'Daininkai',
+        'title'=>'RaRADZI 24/7',
         'description'=>'SUPER NAUJAS DAININKAS',
         'price'=>10,
         'image_url'=>'http://www.music.lt/images/groups/2/1125/Radzi/33d.jpg',
         'subcategory_id'=> 1,
       ]);
       $this->service->create([
-        'title'=>'Muzikantai',
+        'title'=>'IVANUSKA INTERNATIONAL',
         'description'=>'SUPER NAUJAS MUZIKANTAS',
         'price'=>10,
         'image_url'=>'http://www.music.lt/images/groups/2/1125/Radzi/33d.jpg',
-        'subcategory_id'=> 1,
+        'subcategory_id'=> 2,
       ]);
     }
 }

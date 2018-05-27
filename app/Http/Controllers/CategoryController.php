@@ -17,10 +17,11 @@ class CategoryController extends Controller
     $categories = Category::all();
     return view ('categories.index', compact('categories'));
     }
-    public function adminIndex() {
-          $categories = Category::all();
-          return view ('admin.categoriesList', compact('categories'));
-        }
+    public function adminIndex()
+    {
+    $categories = Category::all();
+    return view ('admin.categoriesList', compact('categories'));
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -28,8 +29,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-      return view('categories.create', compact('categories'));
-
+    return view('categories.create', compact('categories'));
     }
 
     /**
@@ -41,9 +41,8 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
       Category::create([
-  'title' => $request->input('title'),
-  'image_url'=>$request->input('image_url'),
-
+      'title' => $request->input('title'),
+      'image_url'=>$request->input('image_url'),
     ]);
     return redirect()->route ('admin.categoriesList')->with ('message','Naujai sukurta kategorija išsaugota!');
     }

@@ -12,11 +12,13 @@
 
 @foreach ($categories as $category)
 
+  <a href="{{route('subcategories.index',$category->title)}}">
 <div class="col-sm-4 md-4" style="width: 18rem;">
   <img class="card-img-top" height="215" width="25" src="{{$category->image_url}}" alt="Card image cap">
   <div class="card-body">
   <h5 class="card-title">{{$category->title}}</h5>
   <p class="card-text">{{$category->description}}</p>
+</a>
   </div>
 </div>
 @endforeach

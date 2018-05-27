@@ -14,7 +14,8 @@ class ServiceController extends Controller
      */
     public function index()
     {
-        //
+        $services = Service::all();
+        return view ('services.index', compact ('services'));
     }
 
     /**
@@ -44,9 +45,10 @@ class ServiceController extends Controller
      * @param  \App\Service  $service
      * @return \Illuminate\Http\Response
      */
-    public function show(Service $service)
+    public function show($id)
     {
-        //
+      $services = Service::findOrFail($);
+      return view ('services.index', compact ('services'));
     }
 
     /**

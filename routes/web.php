@@ -39,6 +39,9 @@ Route::get('/category/create', "CategoryController@create")->name('admin.categor
 Route::post('/category/Store', "CategoryController@store")->name('admin.categoryStore'); // sukurimas
 Route::delete('/category/{category}','CategoryController@destroy')->name('admin.categoryDelete'); //istrinam
 
-
+//subcategories list
+Route::get('categories/{category}', 'SubcategoryController@index')->name('subcategories.index');
+//services 
+Route::get('categories/{category}/services', 'ServiceController@index')->name('services.index');
 
 Route::get('/home', 'HomeController@index')->name('home');
